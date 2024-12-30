@@ -16,12 +16,12 @@ var hostsCmd = &cobra.Command{
 	Short: "Manage the hosts list",
 	Long: `Manages the host lists for pScan
 	
-	Add hosts with add command
-	Delete hosts with delete command
-	List hosts with list command
+Add hosts with add command
+Delete hosts with delete command
+List hosts with list command
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("hosts called")
+		fmt.Println(cmd.Long)
 	},
 }
 
