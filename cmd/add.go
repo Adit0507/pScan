@@ -14,7 +14,7 @@ import (
 
 // addCmd represents the add command
 var addCmd = &cobra.Command{
-	Use:   "add",
+	Use:   "add <host1>...<hostn>",
 	Aliases: []string{"a"},
 	Short: "Add new hosts to list",
 	Args: cobra.MinimumNArgs(1),
