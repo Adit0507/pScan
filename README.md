@@ -14,4 +14,4 @@
 ![alt text](assets/port.png)
 
 ## Generating Docs for commands
-![alt text](assets/docs.PNG)
+![alt text](assets/docs.png)
