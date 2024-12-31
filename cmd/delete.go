@@ -10,21 +10,19 @@ import (
 
 	"github.com/Adit0507/pScan.com/scan"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // deleteCmd represents the delete command
 var deleteCmd = &cobra.Command{
-	Use:   "delete <host1>...<host n>",
-	Short: "Delete hosts from list",
-	Aliases: []string{"d"},
+	Use:          "delete <host1>...<host n>",
+	Aliases:      []string{"d"},
+	Short:        "Delete hosts from list",
 	SilenceUsage: true,
-	Args: cobra.MinimumNArgs(1),
+	Args:         cobra.MinimumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
-		hostsFile, err := cmd.Flags().GetString("hosts-file")
-		if err != nil {
-			return err
-		}
-		
+		hostsFile := viper.GetString("hosts-file")
+
 		return deleteAction(os.Stdout, hostsFile, args)
 	},
 }
@@ -40,7 +38,7 @@ func deleteAction(out io.Writer, hostsFile string, args []string) error {
 		if err := hl.Remove(h); err != nil {
 			return err
 		}
-		fmt.Fprintln(out,"deleted host:", h)
+		fmt.Fprintln(out, "Deleted host: ", h)
 	}
 
 	return hl.Save(hostsFile)
