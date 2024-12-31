@@ -1,5 +1,9 @@
 ## pScan: CLI Tool which executes a TCP Port scan
 
+- Also you can add, list and delete(<b>workin on it!</b>) hosts
+
+- Executes scan on selected ports.
+
 ## Add Hosts
 ![alt text](assets/image-1.png)
 
